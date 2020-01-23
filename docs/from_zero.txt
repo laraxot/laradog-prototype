@@ -1,0 +1,24 @@
+composer global require laravel/installer
+laravel new laradog
+cd laradog
+//-------- colleghiamo la repo
+git init
+git remote add origin https://github.com/laraxot/laradog-prototype.git
+//-------- aggiungiamo i pacchett mancanti
+composer require nwidart/laravel-modules
+composer require mcamara/laravel-localization
+php artisan vendor:publish
+--  [0 ] Publish files from all providers and tags listed below
+[edit composer.json]
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Modules\\": "Modules/"
+    }
+  }
+}
+
+$ composer dumpautoload
+
+php artisan module:make  XXXX
